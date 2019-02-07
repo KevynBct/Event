@@ -107,7 +107,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         val marker = MarkerOptions()
         marker
             .position(position)
-            .title(event.name)
+            .title(event.address)
             .snippet(event.description)
 
         // Changement de couleur du marker

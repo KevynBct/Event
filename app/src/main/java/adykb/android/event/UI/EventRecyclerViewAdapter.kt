@@ -42,8 +42,8 @@ class EventRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
-        holder.mIdView.text = item.id
-        holder.mContentView.text = item.name
+        holder.mDescriptionView.text = item.description
+        holder.mAdressView.text = item.address
 
         with(holder.mView) {
             tag = item
@@ -54,11 +54,11 @@ class EventRecyclerViewAdapter(
     override fun getItemCount(): Int = mValues.size
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val mIdView: TextView = mView.item_number
-        val mContentView: TextView = mView.content
+        val mDescriptionView: TextView = mView.item_description
+        val mAdressView: TextView = mView.item_address
 
         override fun toString(): String {
-            return super.toString() + " '" + mContentView.text + "'"
+            return super.toString() + " '" + mAdressView.text + "'"
         }
     }
 }
