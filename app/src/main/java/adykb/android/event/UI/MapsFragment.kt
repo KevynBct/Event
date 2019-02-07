@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import adykb.android.event.R
-import adykb.android.event.Utils.Event
-import adykb.android.event.Utils.EventDAO
+import adykb.android.event.UI.Data.Event
+import adykb.android.event.UI.Data.EventDAO
 import android.Manifest
 import android.content.pm.PackageManager
 import android.support.v4.app.ActivityCompat
