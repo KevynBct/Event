@@ -1,8 +1,7 @@
 package adykb.android.event.UI
 
 import adykb.android.event.R
-import adykb.android.event.UI.dummy.DummyContent
-import android.content.Intent
+import adykb.android.event.UI.Data.Event
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity(), ListFragment.OnListFragmentInteraction
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
-    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
+    override fun onListFragmentInteraction(item: Event?) {
         Log.i("Test_list", item.toString())
     }
 

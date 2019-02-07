@@ -9,7 +9,7 @@ import adykb.android.event.R
 
 
 import adykb.android.event.UI.ListFragment.OnListFragmentInteractionListener
-import adykb.android.event.UI.dummy.DummyContent.DummyItem
+import adykb.android.event.UI.Data.Event
 
 import kotlinx.android.synthetic.main.fragment_event.view.*
 
@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_event.view.*
  * TODO: Replace the implementation with code for your data type.
  */
 class EventRecyclerViewAdapter(
-    private val mValues: List<DummyItem>,
+    private val mValues: ArrayList<Event>,
     private val mListener: OnListFragmentInteractionListener?
 ) : RecyclerView.Adapter<EventRecyclerViewAdapter.ViewHolder>() {
 
@@ -27,7 +27,7 @@ class EventRecyclerViewAdapter(
 
     init {
         mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyItem
+            val item = v.tag as Event
             // Notify the active callbacks interface (the activity, if the fragment is attached to
             // one) that an item has been selected.
             mListener?.onListFragmentInteraction(item)
@@ -43,7 +43,7 @@ class EventRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
         holder.mIdView.text = item.id
-        holder.mContentView.text = item.content
+        holder.mContentView.text = item.name
 
         with(holder.mView) {
             tag = item

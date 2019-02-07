@@ -10,18 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import adykb.android.event.R
+import adykb.android.event.UI.Data.Event
 
-import adykb.android.event.UI.dummy.DummyContent
-import adykb.android.event.UI.dummy.DummyContent.DummyItem
+import adykb.android.event.UI.Data.EventDAO
 
-/**
- * A fragment representing a list of Items.
- * Activities containing this fragment MUST implement the
- * [ListFragment.OnListFragmentInteractionListener] interface.
- */
 class ListFragment : Fragment() {
 
-    // TODO: Customize parameters
     private var columnCount = 1
 
     private var listener: OnListFragmentInteractionListener? = null
@@ -47,7 +41,7 @@ class ListFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = EventRecyclerViewAdapter(DummyContent.ITEMS, listener)
+                adapter = EventRecyclerViewAdapter(EventDAO.getAllEvents(), listener)
             }
         }
         return view
@@ -67,20 +61,9 @@ class ListFragment : Fragment() {
         listener = null
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson
-     * [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
     interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onListFragmentInteraction(item: DummyItem?)
+        fun onListFragmentInteraction(item: Event?)
     }
 
     companion object {
